@@ -1,0 +1,50 @@
+<div 
+  class="container pt-5"
+  *ngIf="data$ | async as data">
+  <h4>
+    <p class="text-voilet page-header d-inline-block mr-3">Covid-19</p>
+    <p class="text-dark-blue d-inline-block"> Global Trend </p>  
+  </h4>
+  <div class="row pl-2 pr-2">
+    <app-stat-card
+      class="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12 mb-4"
+      *ngFor="let datum of data.majorStats"
+      [stat]="datum">
+    </app-stat-card>
+  </div>
+  <div class="row box-shadow mt-1 ml-0 mr-0 pt-4 bg-white">
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-xs-12">
+      <form>
+        <fieldset>
+          <div class="form-group">
+            <fa-icon  class="search text-gray" [icon]="['fas', 'search']"></fa-icon>
+            <input 
+              type="text" 
+              class="form-control border pl-5 lead bg-light-gray" 
+              placeholder="Search Country">
+            <ul class="list-group mt-3">
+              <li 
+                class="list-group-item d-flex pr-2"
+                (click)="changeCountry(country.CountryCode)"
+                *ngFor="let country of data.countries">
+                 <span class="font-weight-bold lead">
+                  {{ country.NewConfirmed }}
+                </span>
+                <span class="pl-2 lead text-gray">
+                  {{ country.Country }}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <div class="col-xl-9 col-lg-9 col-md-8 col-sm-6 col-xs-12">
+      <app-country-cases-chart 
+        *ngIf="countryData$ | async as countryData"
+        [countryData]="countryData">
+
+      </app-country-cases-chart>
+    </div>
+  </div>
+</div>

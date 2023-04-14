@@ -1,0 +1,35 @@
+/* Add application styles & imports to this file! */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  font-family: 'Poppins', sans-serif;
+  background: #f0f8ff38
+}
+.bg-white{
+  background: white;
+}
+.text-green{
+  color:#6DD400;
+}
+.text-voilet{
+  color:#9475FF;
+}
+.test-orange{
+  color:#FF751A;
+}
+.text-red{
+  color:#FD4E71;
+}
+.text-dark-blue{
+  color:#1A1053;
+}
+.text-gray{
+  color:#817C9B;
+}
+.box-shadow{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0);
+  border: 1px solid white;
+  border-radius: 1rem;
+}

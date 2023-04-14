@@ -1,0 +1,12 @@
+<div class="card box-shadow">
+	<div class="card-body  text-center">
+		<h6 class="text-center font-weight-bold">{{ stat.title }}</h6>
+		<h3 class="card-text font-weight-bold" [style.color]="stat.color">
+			{{ stat.stat }}
+		</h3>
+		<p class="card-text small text-gray">
+			{{ stat.percentage }}%
+			<fa-icon class="text-green" [icon]="['fas', 'caret-down']"></fa-icon>
+		</p>
+	</div>
+</div>
